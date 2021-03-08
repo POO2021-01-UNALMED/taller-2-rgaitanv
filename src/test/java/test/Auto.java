@@ -4,7 +4,7 @@ public class Auto {
 	
 	String modelo;
 	int precio;
-	Asiento asientos[] = new Asiento[10];
+	Asiento asientos[];
 	String marca;
 	Motor motor;
 	int registro;
@@ -22,11 +22,14 @@ public class Auto {
 		boolean asientosIguales = true;
 		
 		for(int i = 0; i < asientos.length-1; i++) {
-			if(asientos[0].registro != asientos[i+1].registro) {
-				asientosIguales = false;
-			}
+			
+				if(asientos[0].registro != asientos[i+1].registro) {
+					asientosIguales = false;
+				}		
+			
 		}
-		if ( (motor.registro == registro) && asientosIguales) {
+		
+		if ( (motor.registro == this.registro) && asientosIguales) {
 				
 			return "Auto original";		
 			
