@@ -14,19 +14,26 @@ public class Auto {
 	
 	public int cantidadAsientos() {
 		
-		return asientos.length;
+		int contador = 0 ;
+		for (int i = 0 ; i < asientos.length; i++) {
+			if(asientos[i] != null ) {
+				contador++;
+			}
+		}		
 		
+		return contador;
 	}
+	
 	
 	String verificarIntegridad() {
 		boolean asientosIguales = true;
 		
-		for(int i = 0; i < asientos.length-1; i++) {
-			
-				if(asientos[0].registro != asientos[i+1].registro) {
+		for(int i = 0; i < asientos.length; i++) {
+			if(asientos[i] != null) {
+				if(asientos[i].registro != registro) {
 					asientosIguales = false;
 				}		
-			
+			}
 		}
 		
 		if ( (motor.registro == this.registro) && asientosIguales) {
